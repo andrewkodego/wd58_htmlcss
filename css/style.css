@@ -1,0 +1,120 @@
+body {
+  font-family: 'lora',Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 10px 20px 30px 40px;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.2;
+}
+
+
+h5 {
+  line-height: 0.2;
+}
+
+h3 {
+  letter-spacing: 3px;
+  line-height: 1.2em;
+  margin: 10px 20px 30px 40px;
+}
+
+
+img {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  max-width: 200px;
+  max-height: 150px;
+  padding-left: 30%;
+  padding-top: 3%;
+  padding-right: 40%;
+}
+
+li{
+  position: relative;
+}
+
+.list-image{
+  position: absolute;
+  width: 150px;
+  height: auto;
+  top: 0px;
+  left: 0px;
+}
+
+/*
+.About {
+  text-align: left;
+  height: 100%;
+  margin-left: 40%;
+  margin-right: 10%;
+  line-height: 1;
+  font-size: 18px;
+
+}
+
+.myself {
+  text-align: left;
+  position: fixed;
+  overflow: hidden;
+}
+
+.content {
+  text-align: left;
+  margin-left: 10px;
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  background-color: #929292 !important;
+}
+
+.container {
+  height: 100%;
+  padding: 10px 100px;
+  position: fixed;
+  overflow: hidden;
+  
+}
+
+.lefttext {
+  float: right;
+  height: 100%;
+  width: 60%;
+  padding-top: 3%;
+  padding-right: 10%;
+  padding-left: 40%;
+}
+
+.lefttext hr {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  right: 18%;
+}
+
+.lefttext p {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lefttext ul {
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+*/

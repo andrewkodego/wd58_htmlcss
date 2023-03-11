@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS Exercise 2</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        #page-wrapper{
+           position: relative;
+        }
+
+        #top-menu{
+            height: 40px;
+            background-color: #333;
+            color: #f2f2f2;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #top-menu ul, #footer ul{
+            list-style: none;
+        }
+
+        #top-menu ul{
+            text-align: center;
+        }
+
+        #top-menu ul>li{
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+        a{
+            text-decoration: none;
+            color: #fff;
+            line-height: 28px;
+        }
+
+        #banner{
+            background-color: beige;
+            min-height: 300px;
+            position: relative;
+        }
+
+        .banner-text{
+            position: absolute;
+            right:20%;
+            top: 30%;
+            text-align: right;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        #main-content section:nth-child(even){
+            background-color: #ccc;
+        }
+
+        section{
+            padding: 30px 0;
+        }
+
+        h3{
+            margin-bottom: 30px;
+        }
+
+        h4{
+            margin: 15px 0;
+        }
+
+        p{
+            margin-bottom: 15px;
+        }
+
+        #footer{
+            min-height: 120px;
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+        }
+
+        #footer>.container>div{
+            float: left;
+        }
+
+        #footer>.container>div:last-child{
+            float: right;
+            width: 30%;
+        }
+    </style>
+
+    </head>
+    <body>
+        <div id="page-wrapper">
+            <div id="top-menu">
+                <div class="container">
+                    <ul>
+                        <li><a href="#page-wrapper">Home</a></li>
+                        <li><a href="#about-me">About Me</a></li>
+                        <li><a href="#my-portfolio">Portfolio</a></li>
+                        <li><a href="#work-experience">Experience</a></li>
+                        <li><a href="#contact-me">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="banner">
+                <div class="banner-text">
+                    <h1>Andrew Falsado</h1>
+                    <p>Senior Full Stack Web Developer</p>
+                </div>
+            </div>
+            <div id="main-content">
+                <section id="about-me">
+                    <div  class="container">
+                        <h3>About Me</h3>
+                        <p>
+                            I'm a web designer, web and mobile app developer, and systems architect providing base framework and components for different types of business solution needed.
+                            Highly experienced in developing reusable components, with good analytical and problem solving skills. 
+                            Always interested on methods of data manipulation and presentation.
+                        </p>
+                        <p>
+                            Have a solid hands on experience in Java and PHP development. 
+                        </p>
+                    </div>
+                </section>
+                <section id="my-portfolio">
+                    <div  class="container">
+                        <h3>My Portfolio</h3>
+                        <div class="d-flex">
+                            <div class="d-inline">
+                                <h4>MyDiversify</h4>
+                                <p>MyDiversify is Diversify's internal HRIS system that is used by all employees and its client. It's main features are attendance tracker, employee leave balance tracker, employee payroll, client invoicing, ticketing system, asset management, inventory, purchase order, payment request form, rewards portal, and reports.</p>
+                            </div>
+                            <div class="d-inline">
+                                <h4>Diversify Careers</h4>
+                                <p>The careers web application is Diversify's own recruitment portal. Its main features are managed job posting, candidate application and processing, and online exam. This uses an API to connect and pull some data from the MyDiversify system.</p>
+                            </div>
+                            <div class="d-inline">
+                                <h4>Diversify Website</h4>
+                                <p>The company website of Diversify. Developed with the use of HTML, CSS, Bootstrap, and jQuery on the front-end, PHP and WordPress framework on the backend, and connected to a MySQL database. </p>
+                            </div>
+                            <div class="d-inline">
+                                <h4>Job Builder Management System</h4>
+                                <p>The system does an estimation and quotation for the construction or repair works based on provided details like floor area and materials to used</p>
+                            </div>
+                            <div class="d-inline">
+                                <h4>Web Scrapping Tool</h4>
+                                <p>A Java program that will run on the background to get some detail information about a targeted website</p>
+                            </div>
+                            <div class="d-inline">
+                                <h4>CalcFusion Compute Engine</h4>
+                                <p>CalcFusion is Ublys own cloud-based service that allows the integration of Excel computations into IT systems. CalcFusion consists of a Console for managing spreadsheets, web services for providing the requested results, and a set of client libraries for connecting various client applications to the web services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="work-experience">
+                    <div class="container">
+                        <h3>Work Experience</h3>
+                        <div class="row">
+                            <div class="col text-end">
+                                <div class="px-5">
+                                    <h4>KodeGo</h4>
+                                    <div>Full Stack Developer Instructor (part-time)</div>
+                                    <div class="text-info">July 2022 - Present</div>
+                                </div>
+                            </div>
+                            <div class="col"></div> 
+                        </div>
+                        <div class="row">
+                            <div class="col order-last">
+                                <div class="px-5">
+                                    <h4>Diversify Offshore Staffing Solutions</h4>
+                                    <div>Digital Systems Automation Manager</div>
+                                    <div class="text-info">July 2019 - Present</div>
+                                </div>
+                            </div>
+                            <div class="col"></div> 
+                        </div>
+                        <div class="row">
+                            <div class="col text-end">
+                                <div class="px-5">
+                                    <h4>Diversify Offshore Staffing Solutions</h4>
+                                    <div>Full Stack Web Developer</div>
+                                    <div class="text-info">April 2016 - July 2019</div>
+                                </div>
+                            </div>
+                            <div class="col"></div>   
+                        </div>                
+                        <div class="row">
+                            <div class="col order-last">
+                                <div class="px-5">
+                                    <h4>Remote Freelancer</h4>
+                                    <div>Web and Mobile App Developer</div>
+                                    <div class="text-info">September 2014 - Present</div>
+                                </div>
+                            </div> 
+                            <div class="col"></div>    
+                        </div>
+                        <div class="row">
+                            <div class="col text-end">
+                                <div class="px-5">
+                                    <h4>UBLYS Corporation</h4>
+                                    <div>Senior Developer</div>
+                                    <div>February 2006 - October 2015</div>
+                                </div class="text-info">
+                            </div>
+                            <div class="col"></div>     
+                        </div>
+                        <div class="row">
+                            <div class="col order-last">
+                                <div class="px-5">
+                                    <h4>IWBCORP</h4>
+                                    <div>Web Designer</div>
+                                    <div class="text-info">April 2005 - January 2006</div>
+                                </div>
+                            </div>
+                            <div class="col"></div>     
+                        </div>
+                        <div class="row">
+                            <div class="col text-end">
+                                <div class="px-5">
+                                    <h4>Philippines Central Island College</h4>
+                                    <div>Computer Instructor</div>
+                                    <div class="text-info">June 2004 - March 2005</div>
+                                </div>
+                            </div> 
+                            <div class="col"></div>    
+                        </div>
+                        <div class="row">
+                            <div class="col order-last">
+                                <div class="px-5">
+                                    <h4>Educational Systems Technological Institute</h4>
+                                    <div>Computer Instructor</div>
+                                    <div class="text-info">November 2001 - March 2003</div>
+                                </div>
+                            </div>
+                            <div class="col"></div>    
+                        </div>
+                    </div>
+                </section>
+                <section id="contact-me">
+                    <div  class="container">
+                        <h3>Contact Me</h3>
+                        
+                    </div>
+                </section>
+            </div>
+            <div id="footer">
+                <div class="container">
+                    <div>
+                        Copyright 2023
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="#">LinkedIn</a>
+                            </li>
+                            <li>
+                                <a href="#">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#">IG</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
