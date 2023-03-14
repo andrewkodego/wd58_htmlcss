@@ -11,6 +11,7 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html, body{
@@ -20,6 +21,7 @@
 
         #page-wrapper{
            position: relative;
+           width: 100%;
         }
 
         #top-menu{
@@ -169,7 +171,7 @@
             top: 30%;
             left:30%;
             box-shadow: 10px 10px 20px 5px #333333aa;
-
+            transition: width 2s, height 2s, transform 2s;
         }
 
         #profile-photo img{
@@ -177,12 +179,201 @@
             height: auto;
         }
 
+        /*#profile-photo:hover{
+            width: 200px;
+            height: 200px;
+            transform: rotate(360deg);
+        }*/
+
         section{
             padding: 60px 0;
             margin-top: -30px;
         }
 
+        #top-menu ul li{
+            transition: all 4s;
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            transition-delay: -2s;
+        }
 
+        #top-menu ul li:hover{            
+            background-color: cadetblue;
+            font-size: 18px;
+        }
+
+        .col-1{
+            width: 8.33%;
+        }
+        .col-2{
+            width: 16.66%;
+        }
+        .col-3{
+            width: 25%;
+        }
+        .col-4{
+            width: 33.33%;
+        }
+        .col-5{
+            width: 41.66%;
+        }
+        .col-6{
+            width: 50%;
+        }
+        .col-7{
+            width: 58.33%;
+        }
+        .col-8{
+            width: 66.66%;
+        }
+        .col-9{
+            width: 75%;
+        }
+        .col-10{
+            width: 83.33%;
+        }
+        .col-11{
+            width: 91.66%;
+        }
+        .col-12{
+            width: 100%;
+        }
+
+
+        @keyframes photo-fx{
+            0% {width: 130px;transform: scaleX(1.2);}
+            25% {width: 180px;transform: scaleX(1.4);}
+            50% {width: 200px;transform: scaleX(1.6);}
+            75% {width: 180px;transform: scaleX(1.7);}
+            100% {width: 150px;transform: scaleX(1);}
+        }
+
+
+        #profile-photo{            
+            animation: photo-fx 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .mobile-menu{
+            display: none;
+        }
+
+        .image-wrapper{
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+       .image-wrapper img{
+            width: 100%;
+            height: auto;
+       }
+
+       .row::after{
+            content: "";
+            display: table;
+            clear: both;
+       }
+       
+       [class*="col-"]{
+            display: inline-block;
+            float: left;
+       }
+
+        @media screen and (max-width:1024px) {
+            .container{
+                padding: 0 15px;
+            }
+            
+        }
+
+        @media screen and (max-width:768px) {
+            .mobile-menu{
+                display: block;
+                padding: 10px 20px;
+            }
+
+            #top-menu ul>li {
+                display: block;
+            }
+
+            #top-menu ul {
+                display: none;
+            }
+
+            .mobile-menu:hover+ul{
+                display: block !important;
+                background-color: #333;
+                text-align: left !important;
+                max-width: 500px;
+            }
+
+            h1{
+                font-size: 36px;
+            }
+
+            h1+p{
+                font-size: 24px;
+            }
+
+            [class*="col-"]{
+                width: 50%;
+            }
+
+        }
+
+        @media screen and (max-width:680px) {
+
+            [class*="col-"]{
+                width: 100%;
+                float: unset;
+            }
+        }
+
+        @media screen and (max-width:426px) {
+            .mobile-menu:hover+ul{
+                max-width: 300px;
+            }
+
+            h1{
+                font-size: 32px;
+            }
+
+            h1+p{
+                font-size: 18px;
+            }
+        }
+
+        .double-image{
+            position: relative;
+            min-height: 270px;
+
+        }
+
+        .double-image div{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 2s;
+            cursor: pointer;
+        }
+
+        .double-image div:hover{
+            z-index: 999999;
+            top: 50px;
+            left: 50px;
+        }
+
+        .double-image div:hover+div{
+            top: 0px;
+            left: 0px;
+        }
+
+        .double-image div:last-child{
+            top: 50px;
+            left: 50px;
+        }
+        
     </style>
 
     </head>
@@ -190,6 +381,9 @@
         <div id="page-wrapper">
             <div id="top-menu">
                 <div class="container">
+                    <div class="mobile-menu">
+                        <span>MENU</span>
+                    </div>
                     <ul>
                         <li><a href="#page-wrapper">Home</a></li>
                         <li><a href="#about-me">About Me</a></li>
@@ -211,16 +405,30 @@
             </div>
             <div id="main-content">
                 <section id="about-me">
-                    <div  class="container">
+                    <div class="container">
                         <h3>About Me</h3>
-                        <p>
-                            I'm a web designer, web and mobile app developer, and systems architect providing base framework and components for different types of business solution needed.
-                            Highly experienced in developing reusable components, with good analytical and problem solving skills. 
-                            Always interested on methods of data manipulation and presentation.
-                        </p>
-                        <p>
-                            Have a solid hands on experience in Java and PHP development. 
-                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <p>
+                                    I'm a web designer, web and mobile app developer, and systems architect providing base framework and components for different types of business solution needed.
+                                    Highly experienced in developing reusable components, with good analytical and problem solving skills. 
+                                    Always interested on methods of data manipulation and presentation.
+                                </p>
+                                <p>
+                                    Have a solid hands on experience in Java and PHP development. 
+                                </p>
+                            </div>
+                            <div class="col-6">
+                                <div class="double-image">
+                                    <div class="image-wrapper">
+                                        <img src="assets/img/DSC_0061_3.jpg"/>
+                                    </div>
+                                    <div class="image-wrapper">
+                                        <img src="assets/img/DSC_0459_1.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section id="my-portfolio">
