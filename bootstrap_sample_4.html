@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Popups</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/fontawesome/css/all.min.css"/>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        
+        .product-datails{
+            max-width: 1024px;
+        }
+
+        .tooltip-inner {
+            background-color: #2f4fff00;
+            box-shadow: 0px 0px 4px black;
+            opacity: 1 !important;
+            color: #000;
+        }
+        .tooltip.bs-tooltip-right .tooltip-arrow::before {
+            border-right-color: #2f4fff00 !important;
+        }
+        .tooltip.bs-tooltip-left .tooltip-arrow::before {
+            border-left-color: #2f4fff00 !important;
+        }
+        .tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+            border-bottom-color: #2f4fff00 !important;
+        }
+        .tooltip.bs-tooltip-top .tooltip-arrow::before {
+            border-top-color: #2f4fff00 !important;
+        }
+
+    </style>
+
+    
+
+    </head>
+    <body>
+        <h2>Modal</h2>
+        <div class="container">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myPopupWin">Open Popup Window</button>
+
+            <div style="margin-top: 100px;margin-left:200px;">
+                <button type="button" class="btn btn-success" data-bs-toggle="popover" data-bs-placement="left"
+                title="Product Info" data-bs-content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
+                    <i class="fa-solid fa-circle-info"></i> Toggle Info
+                </button>
+
+                <button type="button" class="btn btn-success" data-bs-toggle="popover" data-bs-placement="top"
+                title="Product Info" data-bs-content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
+                    <i class="fa-solid fa-circle-info"></i> Toggle Info
+                </button>
+
+                <button type="button" class="btn btn-success" data-bs-toggle="popover" data-bs-placement="bottom"
+                title="Product Info" data-bs-content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
+                    <i class="fa-solid fa-circle-info"></i> Toggle Info
+                </button>
+
+                <button type="button" class="btn btn-success" data-bs-toggle="popover" data-bs-placement="right"
+                data-bs-content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
+                    <i class="fa-solid fa-circle-info"></i> Toggle Info
+                </button>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" title="It's a prank">Danger</button>
+                <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" title="This is an info icon"></i>
+                <i class="fa-solid fa-cart-shopping" data-bs-toggle="tooltip" title="My Cart"></i>
+                <label data-bs-toggle="tooltip" title="Will display more details" data-bs-placement="top">More...</label>
+            </div>
+
+            <div id="myPopupWin" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered product-datails modal-dialog-scrollable">
+                    <div class="modal-content">
+                        
+                        <div class="modal-header">
+                            <h4>Product Details</h4>
+                            <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <img class="img-fluid" src="assets/img/DSC_0061_3.jpg"/>
+                            <div class="row">
+                                <div class="col-sm-6">Product Name: </div>
+                                <div class="col-sm-6">Product 1</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">Product Code: </div>
+                                <div class="col-sm-6">PROCODE</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">Qty: </div>
+                                <div class="col-sm-6">20</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">Price: </div>
+                                <div class="col-sm-6">Php 200</div>
+                            </div>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde enim ab libero corporis? 
+                                Voluptas illum minus magnam ipsam modi quae fuga, recusandae necessitatibus deserunt iure itaque rem 
+                                asperiores sapiente aliquam.
+                            </p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </body>
+    <script>
+
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+        })
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+        
+
+    </script>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Sample Forms and Cards</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/fontawesome/css/all.min.css"/>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        form .row{
+            margin-bottom: 20px;
+        }
+
+        label.required::after{
+            content: "*";
+            color: #f00;
+            right: -10px;
+        }
+
+        .nav-item{
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        #client-profile{
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .carousel-caption{
+            bottom: 40%;
+        }
+        .carousel-indicators [data-bs-target]{
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            margin: 0 15px;
+        }
+
+        #banner-slide{
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        #banner-slide:hover::after{
+            content: "";
+            background-color: rgba(0,0,0,.5);
+            background-image: linear-gradient(90deg, 
+  rgba(0, 255, 0, .2) 0%, 
+  rgba(255, 0, 0, .2) 30%,
+  rgba(0, 0, 255, .2) 66%,
+  rgba(255, 0, 255, .2) 80%
+  );
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        
+    </style>
+
+    <script>
+        function saveRecord(){
+            // domain.com/clients/create
+        }
+
+    </script>
+
+    </head>
+    <body>
+
+        <div id="banner-slide" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#banner-slide" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#banner-slide" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#banner-slide" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="0">
+                    <img src="assets/img/DSC_0061_3.jpg" class="d-block w-100"/>
+                    <div class="carousel-caption">
+                        <h2>Image 1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+                <div class="carousel-item"  data-bs-interval="0">
+                    <img src="assets/img/DSC_0459_1.jpg" class="d-block w-100"/>
+                    <div class="carousel-caption">
+                        <h2>Image 2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+                <div class="carousel-item"  data-bs-interval="0">
+                    <img src="assets/img/DSC_0483_2.jpg" class="d-block w-100"/>
+                    <div class="carousel-caption">
+                        <h2>Image 3</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="carousel-control-prev" data-bs-target="#banner-slide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button type="button" class="carousel-control-next" data-bs-target="#banner-slide" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+
+
+        <h2>Form</h2>
+        <div class="container">
+            <div id="client-profile" class="card mb-3">
+                <div class="card-header bg-success">
+                    <h3>Client Profile</h3>
+                </div>
+                <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Repellendus, a officiis id doloribus hic cupiditate magnam excepturi commodi eaque maxime aliquid possimus exercitationem debitis quae provident reprehenderit, maiores ipsum tempore.</p>
+                </div>
+                <div class="card-footer bg-secondary">
+                    <p>Footer</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card mb-3">
+                        <div class="card-header bg-success">
+                            <h3>Client Profile</h3>
+                        </div>
+                        <div class="card-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Repellendus, a officiis id doloribus hic cupiditate magnam excepturi commodi eaque maxime aliquid possimus exercitationem debitis quae provident reprehenderit, maiores ipsum tempore.</p>
+                        </div>
+                        <div class="card-footer bg-dark">
+                            <p>Footer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card mb-3">
+                        <div class="card-header bg-success">
+                            <h3>Client Profile</h3>
+                        </div>
+                        <div class="card-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Repellendus, a officiis id doloribus hic cupiditate magnam excepturi commodi eaque maxime aliquid possimus exercitationem debitis quae provident reprehenderit, maiores ipsum tempore.</p>
+                        </div>
+                        <div class="card-footer bg-dark">
+                            <p>Footer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card mb-3">
+                        <div class="card-header bg-success">
+                            <h3>Client Profile</h3>
+                        </div>
+                        <div class="card-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Repellendus, a officiis id doloribus hic cupiditate magnam excepturi commodi eaque maxime aliquid possimus exercitationem debitis quae provident reprehenderit, maiores ipsum tempore.</p>
+                        </div>
+                        <div class="card-footer bg-dark">
+                            <p>Footer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#contact-details" >Contact Details</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#files-attached" >Files Attached</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#service-delivered" >Service Delivered</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#client-progress-notes" >Client Progress Notes</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#client-fund-monitoring" >Client Funds Monitor</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#time-tracker" >Time Tracker</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#feedback-complaints" >Feedback and Complaints</a></li>
+            </ul>
+        
+            <div class="tab-content">
+                <div id="contact-details" class="tab-pane active">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="bootstrap_sample_2.html" class="was-validated" onsubmit="saveRecord()">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="form-label required">First Name</label>
+                                        <input type="text" class="form-control" name="first_name" value="" placeholder="First Name" required/>
+                                        <div class="valid-feedback">OK</div>
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="form-label">Last Name</label>
+                                        <input type="text"  class="form-control" name="last_name" value="" placeholder="Last Name" required/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="form-label">Gender</label>
+                                        <select class="form-control form-select" required>
+                                            <option value="">-- Select Gender --</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="N">Not to Disclosed</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="form-label">Civil Status</label>
+                                        <select class="form-select" required>
+                                            <option value="">-- Select Status --</option>
+                                            <option value="S">Single</option>
+                                            <option value="M">Married</option>
+                                            <option value="W">Widow</option>
+                                            <option value="X">Separated</option>
+                                            <option value="C">Complicated</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="opt1" class="form-check-input" value="1" required/>
+                                            <label for="opt1" class="form-check-label">Option 1</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="opt2" class="form-check-input" checked/>
+                                            <label for="opt2" class="form-check-label">Option 2</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="opt3" class="form-check-input"/>
+                                            <label for="opt3" class="form-check-label">Option 3</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input type="radio" id="radio1" class="form-check-input" name="radio-option" value="1" required/>
+                                            <label for="radio1" class="form-check-label">Radio 1</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" id="radio2" class="form-check-input"  name="radio-option"  value="2"/>
+                                            <label for="radio2" class="form-check-label">Radio 2</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" id="radio3" class="form-check-input"  name="radio-option" value="3"/>
+                                            <label for="radio3" class="form-check-label">Radio 3</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="switch1" class="form-check-input"/>
+                                            <label for="switch1" class="form-check-label">Enable Notification</label>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="switch2" class="form-check-input"/>
+                                            <label for="switch2" class="form-check-label">Disable IP Blocker</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="form-label">Amount</label>
+                                        <input type="range" class="form-range" min="0" max="100" step="10"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="first_name" value="" placeholder=""/>
+                                            <label class="form-label">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-floating">
+                                            <input type="text"  class="form-control" name="last_name" value="" placeholder="Last Name"/>
+                                            <label class="form-label">Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-floating">
+                                            <select class="form-control form-select">
+                                                <option>-- Select Gender --</option>
+                                                <option value="M">Male</option>
+                                                <option value="F">Female</option>
+                                                <option value="N">Not to Disclosed</option>
+                                            </select>
+                                            <label class="form-label">Gender</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Address</label>
+                                        <textarea class="form-control" placeholder="Address" rows="5">Text Area Content</textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Address"></textarea>
+                                            <label class="form-label">Address</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="files-attached" class="tab-pane fade">
+                    <div class="container">
+                        <h2>Document Files</h2>
+                    </div>
+                </div>
+                <div id="service-delivered" class="tab-pane fade">
+                    <div class="container">
+                        <h2>Service Delivered</h2>
+                    </div>
+                </div>
+                <div id="client-progress-notes" class="tab-pane fade">
+                    <div class="container">
+                        <h2>Client Progress Notes</h2>
+                    </div>
+                </div>
+                <div id="client-fund-monitoring" class="tab-pane fade">
+                    <div class="container">
+                        <h2>Client Fund Monitoring</h2>
+                    </div>
+                </div>
+                <div id="time-tracker" class="tab-pane fade">
+                    <div class="container">
+                        <h2>Time Tracker</h2>
+                    </div>
+                </div>
+                <div id="feedback-complaints" class="tab-pane fade">
+                    <div class="container">
+                        <h2>Feedback and Complaints</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2>Collapsible</h2>
+            <div>
+                <button type="button" class="btn btn-success" data-bs-toggle="collapse" data-bs-target="#collapse-container">Toggle Container</button>
+                <div id="collapse-container" class="collapse show">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nulla, doloremque, consequatur vero quos cum cumque suscipit deserunt, 
+                        placeat labore temporibus! Dolore magnam itaque odio ullam voluptate officia voluptatum sint.</p>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-success" data-bs-toggle="collapse" data-bs-target="#collapse-container-2">Toggle Container 2</button>
+                <div id="collapse-container-2" class="collapse show">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nulla, doloremque, consequatur vero quos cum cumque suscipit deserunt, 
+                        placeat labore temporibus! Dolore magnam itaque odio ullam voluptate officia voluptatum sint.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Accordion</h2>
+            <div id="parent-accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <a class="btn" href="#content-1" data-bs-toggle="collapse" aria-expanded="false">Content 1</a>
+                    </div>
+                    <div id="content-1" class="card-body collapse show" data-bs-parent="#parent-accordion">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nulla, doloremque, consequatur vero quos cum cumque suscipit deserunt, 
+                            placeat labore temporibus! Dolore magnam itaque odio ullam voluptate officia voluptatum sint.</p>
+                    </div>
+                    <div class="card-header">
+                        <a  class="btn" href="#content-2" data-bs-toggle="collapse" aria-expanded="false">Content 2</a>
+                    </div>
+                    <div id="content-2" class="card-body collapse" data-bs-parent="#parent-accordion">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nulla, doloremque, consequatur vero quos cum cumque suscipit deserunt, 
+                            placeat labore temporibus! Dolore magnam itaque odio ullam voluptate officia voluptatum sint.</p>
+                    </div>
+                    <div class="card-header">
+                        <a  class="btn" href="#content-3" data-bs-toggle="collapse" aria-expanded="false">Content 3</a>
+                    </div>
+                    <div id="content-3" class="card-body collapse" data-bs-parent="#parent-accordion">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nulla, doloremque, consequatur vero quos cum cumque suscipit deserunt, 
+                            placeat labore temporibus! Dolore magnam itaque odio ullam voluptate officia voluptatum sint.</p>
+                    </div>
+                </div>        
+            </div>    
+        </div>
+
+    </body>
+</html>
