@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript Samples</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+</head>
+<body>
+
+    <p>&#60;</p>
+    <p>&#61;</p>
+    <p>&#62;</p>
+
+</body>
+
+    <script>
+
+        /*var x = 1;
+        var y = 20;
+
+        var z = true;
+
+        if(condition/s){
+            // todo statement
+        }else{
+            // todo statement
+        }
+
+        if(x > y){
+            return x - y;
+        }else{
+            return y - x;
+        }
+
+        if(divisor == 0){
+            return "Error division by Zero";
+        }else if(divisor < 0){
+            return x / (divisor * - 1);
+        }else{
+            return x / divisor; // 1/0
+        }
+
+        switch(x){
+            case 1:
+                // todo statement 
+                break;
+            case 2:
+                // todo statement 
+                break;
+            case 3:
+                // todo statement 
+                break;
+            default:
+                // default todo statement 
+                break;
+        }
+
+
+        switch(month){
+            case "February":
+                return 28;
+            case "September","April","June","November":
+                return 30;
+            default:
+                return 31;
+        }
+
+        if(month == "February"){
+            return 28;
+        }else if(month == "September" || month == "April" || month == "June" || month == "November"){
+            return 30;
+        }else{
+            return 31;
+        }
+   
+        if(x > y){
+            return x/y;
+        }else{
+            return y/x;
+        }
+
+
+        if(x !== z){// true
+
+        }
+
+        if(x == y){// true
+
+        }
+
+        if(x != y && x < y ){// false
+
+        }
+
+        if(x > y){// false
+            
+        }
+
+        if(x >= y){// true
+            
+        }
+
+        if(x < y){// false
+            
+        }
+
+        if(x <= y){// true
+            
+        }*/
+
+        function getMonthDays(month){
+            switch(month){
+                case "February":
+                    return 28;
+                case "September":
+                case "April":
+                case "June":
+                case "November":
+                    return 30;
+                default:
+                    return 31;
+            }
+        }
+
+        var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+
+        console.log("January:" + getMonthDays("January") );
+        console.log("February:" + getMonthDays("February"));
+        console.log("March:" + getMonthDays("March"));
+        console.log("April:" + getMonthDays("April"));
+        console.log("May:" + getMonthDays("May"));
+        console.log("June:" + getMonthDays("June"));
+        console.log("July:" + getMonthDays("July"));
+        console.log("August:" + getMonthDays("August"));
+        console.log("September:" + getMonthDays("September"));
+        console.log("October:" + getMonthDays("October"));
+        console.log("November:" + getMonthDays("November"));
+        console.log("December:" + getMonthDays("December"));
+
+        console.log("Applied For Loop");
+        for(var i=0; i < months.length; i++){
+            console.log(months[i] + ":" + getMonthDays(months[i]) + " days");
+        }
+
+        var sum = 0;
+        for(var x=1; x <= 4; x++){
+            sum = x + sum;
+            console.log(sum);
+        }
+        console.log(sum);
+
+
+        console.log("Applied For..of Loop");
+        months.forEach((month, index) =>  {
+            console.log(index);
+            console.log(month + ":" + getMonthDays(month) + " days");          
+        });
+        
+        // intialize 
+        //while (condition)
+        // todo statement
+        // increment/decrement
+        //
+
+        console.log("Applied WHILE Loop");
+        var z = 0;
+        while (z < 12){
+            // todo statement
+            console.log(months[z] + ":" + getMonthDays(months[z]) + " days");
+            z++;
+        }
+
+        console.log("Applied do..WHILE Loop");
+        // initialize
+        // do
+        // todo statement
+        // increment/decrement
+        // while(condition)
+
+        z = 10;
+        do{
+            console.log(months[z] + ":" + getMonthDays(months[z]) + " days");
+            z++;
+        }while (z < 12);
+        
+        var str = ""; // empty string
+        var str; // undefined
+        var str = null; // null
+
+        var student = {"name":"Jerold", "age":21,"gender":"M"};
+
+        var students = [{"name":"Amie", "age":21,"gender":"M"},
+        {"name":"Rommel", "age":21,"gender":"M"},
+        {"name":"Lyka", "age":21,"gender":"F"},
+        {"name":"Nicole", "age":21,"gender":"F"}];
+
+        var x = 0;
+        var y = 0;
+
+        function doAdd(){
+            var x = 20;
+            var y = 30;
+            return x + y;
+        }
+
+        function doSubtract(){
+            var x = 50;
+            var y = 80;
+            return y - x;
+        }
+
+        console.log("do SUBTRACT");
+        console.log(doSubtract());
+        console.log("do ADD");
+        console.log(doAdd());
+
+
+    </script>
+
+    
+    
+</html>

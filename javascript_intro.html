@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript Intro</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+
+<body>
+
+    <div id="js-stage">Test</div>
+    <input type="text" value="KodeGo" id="first-name"/>
+    <button onclick="doHello()">Test </button>
+
+</body>
+<script>
+
+    window.addEventListener("load", (event) => {
+        document.getElementById('js-stage').innerHTML = "Hello Javascript!!!";
+        document.getElementById('js-stage').innerHTML += "<br/>Hello from KodeGo WD58P!!!";
+    });
+
+    function doHello(){
+        var firstName = document.getElementById('first-name').value;
+        document.getElementById('js-stage').innerHTML = "Hello from " + firstName + "!!!";
+    }
+
+</script>
+</html>
