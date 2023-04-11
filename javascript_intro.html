@@ -6,27 +6,350 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <script src="js/javascript_intro.js"></script>
 
 </head>
 
 <body>
 
-    <div id="js-stage">Test</div>
+    <div id="js-stage1">Test</div>    
+    <p id="sample-statement"></p>
+    
     <input type="text" value="KodeGo" id="first-name"/>
-    <button onclick="doHello()">Test </button>
+
+    <script>
+        doHello('js-stage1','first-name');        
+    </script>
+    <button onclick="doHello('sample-statement','first-name')">Test </button>
+
+
+    <section>
+        <h2>Login Sample</h2>
+        <form action="logincheck.php" method="POST">
+            <div>
+                <label>Username</label>
+                <input type="text" name="username" id="username"/>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" id="userpassword"/>
+            </div>
+            <button>Submit</button>
+        </form>
+        <button onclick="onLogin()">Submit</button>
+    </section>
+
+    <div id="logical_or"></div>
+
+    <label>Month Name</label>
+    <input type="text" id="month_name" value=""/>
+    <button onclick="checkNumberOfDays()">Check # of Days</button>
+
+    <div id="switch_case"></div>
 
 </body>
 <script>
 
-    window.addEventListener("load", (event) => {
-        document.getElementById('js-stage').innerHTML = "Hello Javascript!!!";
-        document.getElementById('js-stage').innerHTML += "<br/>Hello from KodeGo WD58P!!!";
-    });
+/*window.addEventListener("load", (event) => {
+    document.getElementById('submit').addEventListener('click',  onLogin());
+});*/
 
-    function doHello(){
-        var firstName = document.getElementById('first-name').value;
-        document.getElementById('js-stage').innerHTML = "Hello from " + firstName + "!!!";
+function onLogin(){
+    let email = 'angelo@kodego.ph';
+    let password = 'PasswOrd';
+
+    if(email == document.getElementById('username').value && password == document.getElementById('userpassword').value){
+        console.log('Login Ok');
+        window.location.href = 'index.html';
+    }else{
+        console.log('Login Failed');
+        window.location.href = 'grid_css.html';
+    }
+    return false;
+}
+
+{
+    let username = 'CarLo_12901';
+    let password = 12345678;
+    
+    if((username != 'carlo_1231' || username.length > 10) && password == '12345678'){
+        document.getElementById('logical_or').innerHTML = 'Test Ok';
+    }else{
+        document.getElementById('logical_or').innerHTML = 'Test Failed';
     }
 
+    console.log(username.toLowerCase());
+    if(username.toUpperCase() == 'CARLO_12901' && password === '12345678'){
+        document.getElementById('logical_or').innerHTML = 'Test 2 Ok';
+    }else{
+        document.getElementById('logical_or').innerHTML = 'Test 2 Failed';
+    }
+}
+
+function checkNumberOfDays(){
+/*
+    switch(expression){
+        case x:
+            // todo statement
+            break;
+        case y:
+            // todo  statement
+            break;
+        default:
+            // todo statement
+            break;
+    }
+*/
+
+    let month = document.getElementById('month_name').value;
+
+    switch (month) {
+        case 'January':
+        case 'March':
+        case 'May':
+        case 'July':
+        case 'August':
+        case 'October':
+        case 'December':
+            document.getElementById('switch_case').innerText = 31;
+            break;
+        case 'September':
+        case 'April':
+        case 'June':
+        case 'November':
+            document.getElementById('switch_case').innerText = 30;
+            break;
+        case 'February':
+            document.getElementById('switch_case').innerText = 28;
+            break;
+        default:
+            document.getElementById('switch_case').innerText = 'Invalid';
+            break;
+    }
+}
+
+
+{
+    const currDate = new Date();
+    document.getElementById('switch_case').innerText = currDate.getDay();
+
+    let dayName = '';
+    let day = currDate.getDay() + 'asdfasd';
+
+    switch(parseInt(day)){ 
+        case 0:
+            dayName = 'Sunday';
+            break;
+        case 1:
+            dayName = 'Monday';
+            break;
+        case 2:
+            dayName = 'Tuesday';
+            break;
+        case 3:
+            dayName = 'Wednesday';
+            break;
+        case 4:
+            dayName = 'Thursday';
+            break;
+        case 5:
+            dayName = 'Friday';
+            break;
+        case 6:
+            dayName = 'Saturday';
+            break;
+        default:
+            dayName = 'Invalid';
+            break;
+    }
+
+    document.getElementById('switch_case').innerText += "=" + dayName;
+
+
+
+}
+
+
+
+
+var y = 10;
+
+let x = 10; // valid
+
+const pi = 3.1416;
+const default_date_format = 'dd-mm-yyyy';
+const VAT = 0.12;
+const sc_discount = .2;
+const pwd_discount = .2;
+const app_name = 'MedWellness';
+const sql_config = [{db_name:'kodego.db',password:'password',server_name:'localhost'}];
+const default_currency = 'Php';
+const meter_to_feet = 1/3.28;
+const gravity = 9.18;
+const version = 'v1.20230404';
+
+const dropped = 7;
+const failed = 5;
+const with_high_honor = 90;
+
+
+
+{
+    let x = 30; //valid
+     x = 40; // valid
+     console.log(x);
+     console.log(version);
+}
+
+{
+    let x = 10;
+     x = 'test';
+     console.log(x);
+}
+
+let func = function(){
+    x = 'test let variable';
+    console.log('test function');
+}
+
+func();
+
+console.log(x);
+
+{
+    // Sample Operators
+    let x = 30;
+    let y = 50;
+    let sum = x + y;
+    console.log(sum); // Addition
+
+    let diff = y-x;
+    console.log(diff); // Subtraction
+
+    let product = x * y;
+    console.log(product); // Multiplication
+
+    let quotient = y / x; // Division
+    console.log(quotient);
+
+    let expo = y ** 2; // Exponential
+    console.log(expo);
+
+    let mod = y % x; // Modulus (Remainder)
+    console.log(mod);
+
+    y++; // Increment
+    console.log(y); // 51
+    console.log(y++); // 51
+    console.log(y); // 52
+
+    x--; // Decrement
+    console.log(x); // 29
+    console.log(x--); // 29
+    console.log(x); // 28
+
+    x += x;
+    console.log(x); //58
+
+    y -= x;
+    console.log(y);
+
+    y *= -4;
+    console.log(y);
+
+    y /= 8;
+    console.log(y);
+
+    x %= 3;
+    console.log(x);
+
+    x **= 5;
+    console.log(x);
+
+    let average = (10 + 20 + 30 + 40 + 50)/5;
+    console.log(average);
+
+    let total = 150;
+    total /= 5;
+    console.log(total);
+
+}
+
+/*if(condition){
+    // todo statement
+}
+
+if(condition){
+    // todo statement
+}else{
+    // todo else statement
+}
+
+if(condition){
+    // todo statement
+}else if(condition){
+    // todo else if statement
+}else if(condition){
+
+}else{
+    // todo else
+}*/
+
+{
+    let x = 50;
+    let y = 40;
+
+    if(x > y){
+        console.log('x is greater than y');
+    }
+
+    if(y > x){
+        console.log('y is greater than x');
+    }else{
+        console.log('y is not greater than x');
+    }
+
+    if(x == y){
+        console.log('x and y is equal');    
+    }else if(x != y){
+        console.log('x is not equal to y');
+    }else if(x >= y){
+        console.log('x is greater than y');
+    }else if(y < x){
+        console.log('y is less than x');
+    }else{
+        console.log('x is not equal and less than y');
+    }
+
+    let password = 'password';//document.getElementById('password_input').innerText;
+    let confirm_password = 'passW0rd'; //document.getElementById('confirm_password_input').innerText;
+    if(password != confirm_password){
+        console.log('Confirm password mismatch');
+        //return false;
+    }
+
+    let email = 'angelo@kodego.ph';
+    if(email == 'angelo@kodego.ph' && password == 'password'){
+        console.log('Account verified');
+    }
+
+
+}
+
+
+
+
+
+
+window.addEventListener("load", (event) => {
+    console.log('window loaded');
+    onLoad('js-stage1','sample-statement');
+});
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    console.log('document loaded');
+    onLoad('js-stage1','sample-statement');
+});
 </script>
 </html>
