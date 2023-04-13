@@ -15,6 +15,18 @@
 
     <h2>For In LOOP</h2>
     <div id="js_output_in"></div>
+
+    <h2>WHILE Loop</h2>
+    <div id="js_output_while"></div>
+
+    <h2>Machine Problem 1</h2>
+    <div id="js_output_m1"></div>
+
+    <h2>Machine Problem 2</h2>
+    <div id="js_output_m2"></div>
+
+    <h2>Machine Problem 3</h2>
+    <div id="js_output_m3"></div>
 </body>
 <script>
 
@@ -151,6 +163,8 @@ employees.forEach(function(employee){
 
 
 
+
+
 /*
 for(){
     for(){
@@ -177,6 +191,128 @@ for(){
     // increment/decrement
 //}
 //while(condition)
+
+/*for(let i=1; i <= 10; i++){
+    console.log(i);
+    document.getElementById('js_output_while').innerHTML += i;
+    if(i < 10){
+        document.getElementById('js_output_while').innerHTML += ',';
+    }
+}
+*/
+
+// initialization
+var i=1;
+while(i <= 10){
+    // todo statement
+    console.log(i);
+    document.getElementById('js_output_while').innerHTML += i;
+    if(i < 10){
+        document.getElementById('js_output_while').innerHTML += ',';
+    }
+
+    // increment
+    i++;
+}
+
+document.getElementById('js_output_while').innerHTML += '<br/>';
+
+var i=10;
+while(i >= 1){
+    // todo statement
+    console.log(i);
+    document.getElementById('js_output_while').innerHTML += i;
+    if(i > 1){
+        document.getElementById('js_output_while').innerHTML += ',';
+    }
+
+    // decrement
+    i--;
+}
+
+/*
+let product = 0;
+for(let i=1; i <= 4; i++){
+    product = product + 4;
+}
+
+console.log(product);
+document.getElementById('js_output').innerHTML += '<br>' + product;
+*/
+
+product = 0;
+var i=1;
+while(i<=4){
+    product += 4;
+    i++;
+}
+document.getElementById('js_output_while').innerHTML += '<br>' + product;
+
+
+/* 
+const numArr = [6, 49, 31, 24, 18, 10, 9, 30, 1, 2, 3, 4, 7, 11,12];
+for(let i in numArr){
+    if(i <= 4){
+        document.getElementById('js_output_in').innerHTML += '<br>' + numArr[i];
+    }
+}
+*/
+
+document.getElementById('js_output_while').innerHTML += '<br>';
+
+var i = 0;
+while(numArr[i]){
+    document.getElementById('js_output_while').innerHTML += numArr[i];
+    if(i < numArr.length - 1){
+        document.getElementById('js_output_while').innerHTML += ',';
+    }
+    i++;
+}
+
+document.getElementById('js_output_while').innerHTML += '<br>';
+
+var i = 11;
+do{
+    document.getElementById('js_output_while').innerHTML += i;
+    if(i < 10){
+        document.getElementById('js_output_while').innerHTML += ',';
+    }
+    i++;
+}while(i <= 10);
+
+
+
+let staff = [{name: "Oliver Queen", title: "CEO", gender: "male", age: 38, languages: ["english", "spanish"]}, 
+{name: "Ben Hur", title: "Security consultant", gender: "male", age: 25, languages: ["latin", "italian"]}, 
+{name: "Jessica Alba", title: "Admin Assistant", gender: "female", age: 23, languages: ["english", "spanish"]}, 
+{name: "Pepper Piper", title: "Quality Assurance", gender: "female", age: 32, languages: ["english", "spanish"]},
+{name: "Red Sullivan", title: "Project Manager", gender: "male", age: 27, languages: ["russian", "english"]},
+{name:"Juan Dela Cruz", title: "Manager", age: 24, gender: "male", languages: ["russian", "french"]},
+{name:"Anna Salvador", title: "Junior Dev", age: 21, gender: "female", languages: ["english", "french"]},
+{name:"Mark Bautista", title: "Senior Fullstack Dev", age: 28, gender: "male", languages: ["russion", "spanish"]},
+{name:"Micheal Garcia", title: "CEO", age: 40, gender: "male", languages: ["english", "latin"]}];
+
+
+let ageAboveThirty = 0;
+let speakSpanish = 0;
+
+//staff.forEach(function(employee){
+staff.forEach((employee) => {
+    document.getElementById('js_output_m1').innerHTML += '<br/> Name:' + employee.name + ', Age:' + employee.age;
+    if(employee.age > 30){
+        ageAboveThirty++;
+    }
+    if(employee.languages.includes('spanish')){
+        speakSpanish++;
+    }
+});
+
+document.getElementById('js_output_m2').innerHTML += '<br/>' + ageAboveThirty;
+
+document.getElementById('js_output_m3').innerHTML += '<br/>' + speakSpanish;
+
+
+
 
 
 
