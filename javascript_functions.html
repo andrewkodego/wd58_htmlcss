@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript Loops</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <script src="js/javascript_intro.js"></script>
+
+</head>
+<body>
+    <h1>Function Samples</h1>
+    
+    <div id="area_value"></div>
+</body>
+<script>
+    let staff = [{name: "Oliver Queen", title: "CEO", gender: "male", age: 38, languages: ["english", "spanish"]}, 
+        {name: "Ben Hur", title: "Security consultant", gender: "male", age: 25, languages: ["latin", "italian"]}, 
+        {name: "Jessica Alba", title: "Admin Assistant", gender: "female", age: 23, languages: ["english", "spanish"]}, 
+        {name: "Pepper Piper", title: "Quality Assurance", gender: "female", age: 32, languages: ["english", "spanish"]},
+        {name: "Red Sullivan", title: "Project Manager", gender: "male", age: 27, languages: ["russian", "english"]},
+        {name:"Juan Dela Cruz", title: "Manager", age: 24, gender: "male", languages: ["russian", "french"]},
+        {name:"Anna Salvador", title: "Junior Dev", age: 21, gender: "female", languages: ["english", "french"]},
+        {name:"Mark Bautista", title: "Senior Fullstack Dev", age: 28, gender: "male", languages: ["russian", "spanish"]},
+        {name:"Micheal Garcia", title: "CEO", age: 40, gender: "male", languages: ["english", "latin"]}];
+
+
+    document.getElementById('area_value').innerHTML = getAreaOfCircle(5);
+    document.getElementById('area_value').innerHTML += '<br/>' + getAreaOfCircle(6);
+    document.getElementById('area_value').innerHTML += '<br/>' + getAreaOfCircle(8);
+    document.getElementById('area_value').innerHTML += '<br/>' + getAreaOfCircle(10);
+
+    document.getElementById('area_value').innerHTML += '<br/>' + checkOddOrEven(4);
+    document.getElementById('area_value').innerHTML += '<br/>' + checkOddOrEven(13);
+
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'age',  24);
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'age', 27, '>=');
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'age', 28, '<');
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'age', 40, '!=');
+
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'gender', 'male');
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'gender', 'female');
+
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'languages', 'latin');
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'languages', 'english');
+    document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'languages', 'french');
+
+</script>
+
+</html>
