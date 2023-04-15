@@ -80,3 +80,7 @@ const getAgeCount = (value, operator, checkValue) => {
 
     return count;
 }
+
+const addDisplayResult = (target, value) => {
+    document.getElementById(target).innerHTML += '<br/>' +  value;
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript Methods</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <script src="js/javascript_intro.js"></script>
+
+</head>
+<body>
+    <h1>Javascript Methods</h1>
+
+    <div>
+        <h2>Invoice Details</h2>
+        
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Qty</th>
+                <th>Unit Price</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    <h3>String Methods</h3>
+    <div id="methods_result"></div>
+
+    <h3>Array Methods</h3>
+    <div id="arr_methods_result"></div>
+
+    
+
+</body>
+<script>
+
+    // Length
+    const statement = "A good programmer is someone who always looks both ways before crossing a one-way One-on-One one@way street."
+
+    addDisplayResult("methods_result", statement.length);
+    addDisplayResult("methods_result", statement.slice(0,10));
+    addDisplayResult("methods_result", statement.slice(7,28));
+    addDisplayResult("methods_result", statement.slice(-10));
+    addDisplayResult("methods_result", statement.slice(-10, -5));
+
+    addDisplayResult("methods_result", statement.substr(0,10));
+    addDisplayResult("methods_result", statement.substr(7,28));
+    addDisplayResult("methods_result", statement.substr(-10));
+    addDisplayResult("methods_result", statement.substr(-30, 20));
+
+    addDisplayResult("methods_result", statement.substring(10, 20));
+    addDisplayResult("methods_result", statement.substring(-10, 20));
+
+    addDisplayResult("methods_result", statement.replace("good","bad"));
+    addDisplayResult("methods_result", statement.replace("one","two"));
+
+    addDisplayResult("methods_result", statement.replaceAll("one","two"));
+
+    addDisplayResult("methods_result", statement.replace(/\bone\b/g,"two"));
+    addDisplayResult("methods_result", statement.replace(/ both /g," two "));
+
+    addDisplayResult("methods_result", statement.replace(/one /g," two "));
+    addDisplayResult("methods_result", statement.replaceAll("One","Two"));
+    addDisplayResult("methods_result", statement.replaceAll(/One/gi,"Two"));
+
+    addDisplayResult("methods_result", statement.toLowerCase());
+    addDisplayResult("methods_result", statement.toUpperCase());
+
+    let addedText = "Hello World";
+    addDisplayResult("methods_result", statement.concat(" ", addedText));
+    addDisplayResult("methods_result", statement.concat(" ", statement.slice(0,10)));
+    addDisplayResult("methods_result", statement.slice(0,10).concat(" ", statement));
+    addDisplayResult("methods_result", statement.slice(0,10).toUpperCase());
+
+    addDisplayResult("methods_result", statement.replaceAll("programmer","PROGRAMMER"));
+
+    let newStr = '      TEST Statement for Trim      ';
+    addDisplayResult("methods_result", newStr.concat(statement.slice(0,2), statement.slice(2, 17).toUpperCase(), statement.substr(17)));
+
+    addDisplayResult("methods_result", newStr.trim());
+    addDisplayResult("methods_result", newStr.trimRight());
+
+    console.log(newStr.trimRight());
+    console.log(newStr.trimLeft());
+    console.log(newStr.trimStart());
+    console.log(newStr.trimEnd());
+
+    let invoiceNumber = '1234'; // 00001234
+    let invoiceNumber1 = '123456'; // 0000001, 00000100, 0020000
+    let invoiceNumber2 = '12345678'; 
+    let invoiceNumber3 = '123456789'; 
+    addDisplayResult("methods_result", invoiceNumber.padStart(8, "0"));
+    addDisplayResult("methods_result", invoiceNumber1.padStart(8, "0"));
+    addDisplayResult("methods_result", invoiceNumber2.padStart(8, "0"));
+
+    addDisplayResult("methods_result", invoiceNumber.padEnd(8, "0"));
+    addDisplayResult("methods_result", invoiceNumber1.padEnd(8, "0"));
+    addDisplayResult("methods_result", invoiceNumber2.padEnd(8, "0"));
+    addDisplayResult("methods_result", invoiceNumber3.padEnd(8, "0"));
+
+    addDisplayResult("methods_result", statement.charAt(0));
+    addDisplayResult("methods_result", statement.charAt(10));
+    addDisplayResult("methods_result", statement.charAt(42));
+
+    addDisplayResult("methods_result", statement.charCodeAt(0));
+    addDisplayResult("methods_result", statement.charCodeAt(12));
+    addDisplayResult("methods_result", statement.charCodeAt(42));
+
+    // A - 65 - Z - 90, a - 97 to z - 122
+    addDisplayResult("methods_result", statement.split(" "));
+    console.log(statement.split(" "));
+    addDisplayResult("methods_result", statement.split(""));
+    addDisplayResult("methods_result", statement.split("-"));
+    addDisplayResult("methods_result", statement.split(" ",10));
+
+    statement.split(" ").forEach((value) => {
+        console.log(value);
+    });
+
+    addDisplayResult("methods_result", statement.indexOf('programmer'));
+    
+    addDisplayResult("methods_result", statement.lastIndexOf('one'));
+    addDisplayResult("methods_result", statement.lastIndexOf('baby'));
+
+    addDisplayResult("methods_result", statement.indexOf('one'));
+    addDisplayResult("methods_result", statement.search(/one/));
+    
+    addDisplayResult("methods_result", statement.match("one"));
+    console.log(statement.match("one"));
+
+    addDisplayResult("methods_result", statement.matchAll("one"));
+    console.log(statement.matchAll("one"));
+
+    document.getElementById("methods_result").innerHTML += '<br/>' +  Array.from(statement.matchAll("one"));
+    document.getElementById("methods_result").innerHTML += '<br/>' + Array.from(statement.matchAll(/one/gi));
+
+    addDisplayResult("methods_result", statement.includes("one"));
+    addDisplayResult("methods_result", statement.includes("baby"));
+  
+    addDisplayResult("methods_result", statement.startsWith("baby"));
+    addDisplayResult("methods_result", statement.startsWith("A"));
+    addDisplayResult("methods_result", statement.startsWith("programmer", 7));
+
+    addDisplayResult("methods_result", statement.endsWith("A"));
+    addDisplayResult("methods_result", statement.endsWith("."));
+
+    addDisplayResult("methods_result", statement.endsWith("programmer"));
+    addDisplayResult("methods_result", statement.endsWith("programmer", 17));
+
+    addDisplayResult("methods_result", newStr.startsWith("TEST"));
+    addDisplayResult("methods_result", newStr.trim().startsWith("TEST"));
+    
+
+    addDisplayResult("methods_result", `Template Literal sample ${newStr}`);
+
+    addDisplayResult("methods_result", "We shoudn't have to");
+    addDisplayResult("methods_result", `We shoudn't have to`);
+    addDisplayResult("methods_result", `We shoudn"t have to`);
+
+    let firstName ='Nicole';
+    let lastName = 'Magallanes';
+
+    addDisplayResult("methods_result", `First Name: ${firstName}, Last Name: ${lastName}`);
+
+    let students = ["Lyks","Nicole","Jerold","Nicole","Angelo","Miloy","Revelyn","Ralph"];
+
+    addDisplayResult("arr_methods_result", students);
+    addDisplayResult("arr_methods_result", students.join(" - "));
+
+    addDisplayResult("arr_methods_result", students.pop());
+    students.push("Carlo");
+    students.push("Ralph");
+    addDisplayResult("arr_methods_result", students.join(" - "));
+
+    students.shift();
+    addDisplayResult("arr_methods_result", students.join(", "));
+    students.unshift("Josh");
+    addDisplayResult("arr_methods_result", students.join("; "));
+
+    addDisplayResult("arr_methods_result", students.length);
+
+    delete students[5];
+    students[5] = "Gil";
+
+    addDisplayResult("arr_methods_result", students.join(" - "));
+    console.log(students);
+
+    let students1 = ["Rommel","Gil","Ronnie","David"];
+    let allStudents = students.concat(students1);
+
+    addDisplayResult("arr_methods_result", allStudents.join(" || "));
+    addDisplayResult("arr_methods_result", students.join(" || "));
+
+    addDisplayResult("arr_methods_result", students1.concat(students, allStudents).join(" || "));
+
+    let numbers = [1,2,3,4,5];
+    let numbers2 = [6,7,8,9,10];
+    let numbers3 = [20, 30, 40, 50,60];
+    let allnumbers = numbers2.concat(numbers3, numbers);
+    addDisplayResult("arr_methods_result", allnumbers.join(" * "));
+
+    // splice(); 
+    numbers3.splice(2, 0, 90, numbers3, 400, 3);
+    addDisplayResult("arr_methods_result", numbers3.join(" * "));
+
+    numbers3.splice(3, 2, 9, 20, 401, 39);
+    addDisplayResult("arr_methods_result", numbers3.join(" * "));
+
+    students.splice(4, 2, "Juan","Pedro","Cardo");
+    addDisplayResult("arr_methods_result", students.join(" - "));
+
+    //slice();
+    let slicedArr = students.slice(1, 4);
+    addDisplayResult("arr_methods_result", slicedArr.join(" - "));
+
+    students.sort();
+    addDisplayResult("arr_methods_result", students.join(" * "));
+    students.reverse();
+    addDisplayResult("arr_methods_result", students.join(" * "));
+    
+    numbers3.sort();
+    addDisplayResult("arr_methods_result", numbers3.join(" || "));
+
+    // 20 * 30 * 90 * 9 * 20 * 401 * 39 * 3 * 40 * 50 * 60
+    numbers3.sort((curr,next)=>{ return next - curr});
+    addDisplayResult("arr_methods_result", numbers3.join(" || "));
+
+    numbers3 = [20, 30, 40, 50, 60];
+    const mapNumber = numbers3.map((value, index, array)=>{
+        if(index == 1){
+            return "Php " + (value + 5);
+        }
+        return "Php " + value;
+    });
+
+    addDisplayResult("arr_methods_result", mapNumber.join(", "));
+
+    let updateNumbs = [];
+    numbers3.forEach((value, index, array) => {
+        updateNumbs.push("Php" + (value + 5));
+    });
+
+    addDisplayResult("arr_methods_result", updateNumbs.join(", "));
+
+    let filteredNums = allnumbers.filter((value, index, array) => {
+        return value < 30;
+    });
+
+    addDisplayResult("arr_methods_result", filteredNums.join(", "));
+
+    let sum = allnumbers.reduce((total,value, index, array) => {
+        return total + value;
+    });
+
+    addDisplayResult("arr_methods_result", allnumbers);
+    addDisplayResult("arr_methods_result", sum);
+
+    students.push("Pedro");
+    addDisplayResult("arr_methods_result", students);
+    addDisplayResult("arr_methods_result", students.indexOf("Pedro"));
+    addDisplayResult("arr_methods_result", students.lastIndexOf("Pedro"));
+    
+    let whereisPedro = students.find((value, index, array)=>{
+        if(value == "Pedro"){
+            return value;
+        }
+    });
+
+    addDisplayResult("arr_methods_result", whereisPedro);
+
+    let whereisPedroIndex = students.findIndex((value, index, array)=>{
+        if(value == "Pedro"){
+            return value;
+        }
+    });
+
+    addDisplayResult("arr_methods_result", whereisPedroIndex);
+
+    let firstMoreThan30 = allnumbers.find((value, index, array)=>{
+        return value > 30;
+    });
+
+    let firstIndexMoreThan30 = allnumbers.findIndex((value, index, array)=>{
+        return value > 30;
+    });
+
+    addDisplayResult("arr_methods_result", allnumbers);
+    addDisplayResult("arr_methods_result", firstMoreThan30);
+    addDisplayResult("arr_methods_result", firstIndexMoreThan30);
+
+
+    numbers3.splice(2, 0, 90, 50, 400, 3);
+    numbers3.splice(2, 0, 90, ["Ralph","Rommel"], 400, 3);
+    addDisplayResult("arr_methods_result", numbers3.join(" * "));
+
+    students = ["Lyks","Nicole","Jerold","Nicole","Angelo","Miloy","Revelyn","Ralph"];
+    //students = ["Lyks","Nicole"];
+    //students1 = ["Lyks"];
+    //students2 = ["Nicole"];
+    //studentsRest = ["Jerold","Nicole","Angelo","Miloy","Revelyn","Ralph"];
+
+    [student1, student2, ...studentRest] = students;
+
+    addDisplayResult("arr_methods_result", student1);
+    addDisplayResult("arr_methods_result", student2);
+    addDisplayResult("arr_methods_result", studentRest.join(" * "));
+
+    student1 = ["Lyks","Nicole"];
+    student2 = ["Nicole","Josh"];
+
+    let resetList = [...student1, ...student2, ...studentRest];
+
+    addDisplayResult("arr_methods_result", resetList.join(" * "));
+
+    
+
+
+</script>  
+</html>
