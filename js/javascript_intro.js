@@ -81,6 +81,33 @@ const getAgeCount = (value, operator, checkValue) => {
     return count;
 }
 
-const addDisplayResult = (target, value) => {
-    document.getElementById(target).innerHTML += '<br/>' +  value;
+const addDisplayResult = (target, value, nexline='<br/>') => {
+    document.getElementById(target).innerHTML += nexline +  value;
 }
+
+
+const dateFormatter = (date, format)=>{
+    let year = date.getFullYear();
+    let month = date.getMonth();
+    let day = date.getDate();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
+    let milSec = date.getMilliseconds();    
+
+    let formatedDate = format.replace('yyyy', year);
+    formatedDate = formatedDate.replace('mm', month.toString().padStart(2, '0'));
+    formatedDate = formatedDate.replace('dd', day.toString().padStart(2, '0'));
+    formatedDate = formatedDate.replace('hh', hour.toString().padStart(2, '0'));
+    formatedDate = formatedDate.replace('MM', minute.toString().padStart(2, '0'));
+    formatedDate = formatedDate.replace('ss', second.toString().padStart(2, '0'));
+    formatedDate = formatedDate.replace('ms', milSec.toString().padStart(2, '0'));
+
+    return formatedDate;
+}
+
+const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const SHORT_DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const SHORT_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+

@@ -7,30 +7,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
     <script src="js/javascript_intro.js"></script>
 
 </head>
 <body>
     <h1>Javascript Methods</h1>
 
-    <div>
+    <div class="container">
         <h2>Invoice Details</h2>
-        
+        <div class="row">
+            <div class="col-sm-8">
+                <label id="invoice_to">Invoice To: </label>
+            </div>
+            <div class="col-sm-4">
+                <label id="invoice_date">Date: </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <label id="invoice_address">Address: </label>
+            </div>
+            <div class="col-sm-4">
+                <label id="invoice_num">Invoice #: </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label id="invoice_payment_mode">Payment Mode: </label>
+            </div>
+        </div>
     </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Description</th>
-                <th>Qty</th>
-                <th>Unit Price</th>
-                <th>Amount</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Description</th>
+                    <th style="width: 10%;">Qty</th>
+                    <th style="width: 20%;">Unit Price</th>
+                    <th style="width: 20%;">Amount</th>
+                </tr>
+            </thead>
+            <tbody id="invoice_items">
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
 
     <h3>String Methods</h3>
@@ -39,10 +63,47 @@
     <h3>Array Methods</h3>
     <div id="arr_methods_result"></div>
 
+    <h3>Date Methods</h3>
+    <div id="date_methods_result"></div>
+
+    <h3>Math Methods</h3>
+    <div id="math_methods_result"></div>
     
 
 </body>
 <script>
+
+let invoice = {invoiceTo:"Juan Dela Cruz", date:"2023-04-15", address1: "810 Oroquieta Street Sta Cruz 1000", address2:"Manila, Metro Manila, Philippines", invoiceNumber:"6845",paymentMode:"COD"};
+
+let invoiceItems = [{description: "Mouse", Qty: 3, unitPrice: 200}, 
+    {description: "Keyboard", Qty: 3, unitPrice: 400},
+    {description: "Monitor", Qty: 6, unitPrice: 5400},
+    {description: "CPU Tower Case", Qty: 3, unitPrice: 1200},
+    {description: "Headset", Qty: 3, unitPrice: 500},
+    {description: "UPS", Qty: 1, unitPrice: 4000},];
+
+    addDisplayResult("invoice_to", invoice.invoiceTo, ' ');
+    addDisplayResult("invoice_date", invoice.date, ' ');
+    addDisplayResult("invoice_address", invoice.address1.concat(", ", invoice.address2), ' ');
+    addDisplayResult("invoice_num", invoice.invoiceNumber.padStart(10, "0"), ' ');
+    addDisplayResult("invoice_payment_mode", invoice.paymentMode, ' ');
+
+    invoiceItems.forEach((item)=>{
+
+        let amount = item.Qty * item.unitPrice;
+        let newRow = `<tr>`;
+            newRow += `<td>${item.description}</td>`;
+            newRow += `<td>${item.Qty}</td>`;
+            newRow += `<td>${item.unitPrice}</td>`;
+            newRow += `<td>${amount}</td>`;
+            newRow += `</tr>`;
+        
+        document.getElementById("invoice_items").innerHTML += newRow;
+
+    });
+
+
+      
 
     // Length
     const statement = "A good programmer is someone who always looks both ways before crossing a one-way One-on-One one@way street."
@@ -322,8 +383,91 @@
 
     addDisplayResult("arr_methods_result", resetList.join(" * "));
 
+    let currDate = new Date();
+    addDisplayResult("date_methods_result", currDate);
+
+    let specificDate = new Date('2023-04-15');
+    addDisplayResult("date_methods_result", specificDate);
+
+    specificDate = new Date('April 1, 2023 02:45:30');
+    addDisplayResult("date_methods_result", specificDate);
+
+    specificDate = new Date('2023-04-15 02:45:30');
+    addDisplayResult("date_methods_result", specificDate);
+
+    specificDate = new Date(2020, 7, 22, 14, 56, 40);
+    addDisplayResult("date_methods_result", specificDate);
+
+    specificDate = new Date(2021, 7, 4, 14, 56, 40);
+    addDisplayResult("date_methods_result", specificDate);
+
+    addDisplayResult("date_methods_result", specificDate.toUTCString());
+    addDisplayResult("date_methods_result", specificDate.toISOString());
+    addDisplayResult("date_methods_result", specificDate.toDateString());
+
+    addDisplayResult("date_methods_result", dateFormatter(specificDate, 'dd/mm/yyyy'));
+    addDisplayResult("date_methods_result", dateFormatter(specificDate, 'dd-mm-yyyy'));
+    addDisplayResult("date_methods_result", dateFormatter(specificDate, 'mm-dd-yyyy hh:MM:ss:ms'));
+    addDisplayResult("date_methods_result", dateFormatter(specificDate, 'yyyy-dd-mm'));
+
+    addDisplayResult("date_methods_result", specificDate.getDay());
+    addDisplayResult("date_methods_result", DAYS[specificDate.getDay()]);
+    addDisplayResult("date_methods_result", SHORT_DAYS[specificDate.getDay()]);
+    addDisplayResult("date_methods_result", MONTHS[specificDate.getMonth()]);
+    addDisplayResult("date_methods_result", SHORT_MONTHS[specificDate.getMonth()]);
+    
+    addDisplayResult("date_methods_result", specificDate.getTime()); // January 1, 1970
+
+    specificDate.setDate(specificDate.getDate() + 1);
+    addDisplayResult("date_methods_result", specificDate);
+
+    specificDate.setDate(specificDate.getDate() + 30);
+    addDisplayResult("date_methods_result", specificDate);
+
+    addDisplayResult("math_methods_result", Math.PI);
+    addDisplayResult("math_methods_result", Math.E);
+    addDisplayResult("math_methods_result", Math.SQRT2);
+    addDisplayResult("math_methods_result", Math.LOG10E);
+
+    addDisplayResult("math_methods_result", Math.round(12.4));
+    addDisplayResult("math_methods_result", Math.round(12.567));
+
+    addDisplayResult("math_methods_result", Math.ceil(12.49));
+    addDisplayResult("math_methods_result", Math.floor(12.81));
+
+    addDisplayResult("math_methods_result", Math.ceil(-11.49));
+    addDisplayResult("math_methods_result", Math.floor(-11.81));
+
+    let testNum = 12.567890;
+
+    addDisplayResult("math_methods_result", testNum.toFixed(1));
+
+    addDisplayResult("math_methods_result", Math.max(10, 20, 50, 15, 40));
+    addDisplayResult("math_methods_result", Math.min(10, 20, 50, 15, 40));
+
+    addDisplayResult("math_methods_result", Math.random());
+    addDisplayResult("math_methods_result", Math.random() * 10);
+    addDisplayResult("math_methods_result", Math.floor(Math.random() * 10) + 1);
+    addDisplayResult("math_methods_result", Math.floor(Math.random() * 100) + 1);
+    addDisplayResult("math_methods_result", Math.floor(Math.random() * 2000) + 1);
+
+    const alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
+
+    addDisplayResult("math_methods_result", alphabet.charAt(Math.floor(Math.random() * 36) + 1));
+
+    let employees = [
+        {firstName:"Juan", lastName:"Dela Cruz", age: 24,gender: "male", jobTitle: "Manager"},
+        {firstName:"Anna", lastName:"Salvador", age: 21, gender: "female", jobTitle: "Junior Dev"},
+        {firstName:"Mark", lastName:"Bautista", age: 28, gender: "male", jobTitle: "Senior Fullstack Dev"},
+        {firstName:"Micheal", lastName:"Garcia", age: 31, gender: "male", jobTitle: "CEO"},
+    ];
+
+    addDisplayResult("math_methods_result", employees[Math.floor(Math.random() * employees.length)].firstName);
+    addDisplayResult("math_methods_result", Math.floor(Math.random() * 30) + 20);
+
     
 
 
 </script>  
 </html>
+
