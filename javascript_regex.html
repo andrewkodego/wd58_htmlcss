@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript Methods</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/javascript_intro.js"></script>
+
+</head>
+<body>
+    <h1>Javascript RegEx</h1>
+       
+    <div>
+    <input type="text" value="" id="number_fld1"/>
+    <button onclick="validateNumber()">Validate Six Digit</button>
+    </div>
+    <div>
+    <input type="text" value="" id="email_fld" placeholder="Enter email address"/>
+    <button onclick="validateEmail()">Validate Email</button>
+    </div>
+    <div>
+    <input type="text" value="" id="password_fld" placeholder="Enter password"/>
+    <button onclick="validatePassword()">Validate Password</button>
+    </div>
+    <div id="methods_result"></div>
+
+
+    
+    
+
+</body>
+<script>
+
+    /*
+    /pattern/modifier
+    string.replace("hello", "hi");
+    string.replace(/hello/i, "hi");
+    */
+
+    const statement = "A good programmer is someone who always looks both ways";
+
+    addDisplayResult("methods_result", statement.match(/e/g).length);
+    addDisplayResult("methods_result", statement.match(/oo/g).length);
+    addDisplayResult("methods_result", statement.match(/a/gi).length);
+
+    // 123456dfsgdfg
+    const regExSixDigit = /^\d{6}$/;
+
+    const validateNumber = ()=>{
+        let inputStr = document.getElementById('number_fld1').value;
+        addDisplayResult("methods_result", regExSixDigit.test(inputStr));
+    }
+
+    /* andrew@kodego.ph */
+    /* wiser4me97@gmail.com */
+    /* andrew.falsado@gmail.com */
+
+    const regExEmail = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,6})+$/;
+    const validateEmail = () => {
+        let emailStr = document.getElementById('email_fld').value;
+        addDisplayResult("methods_result", regExEmail.test(emailStr));
+    }
+
+    // (?=.*[A-Z]) at least one uppercase
+    // (?=.*[a-z]) at least one lowercase
+    // (?=.*[0-9]) at least one numeric
+    // (?=.*[!@#\$%\^&\*]) at least one special char
+    // (?=.{8}) at least 8 characters in length
+
+    const strongPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*\?_+=\-|])(?=.{8})/;
+
+    const validatePassword = () =>{
+        let passwordStr = document.getElementById('password_fld').value;
+        addDisplayResult("methods_result", strongPassword.test(passwordStr));
+    }
+
+
+</script>  
+</html>
+
